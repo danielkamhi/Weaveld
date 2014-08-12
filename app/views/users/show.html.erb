@@ -1,0 +1,16 @@
+<h3>Please tell us a little bit more about yourself</h3>
+
+<%= form_for(@user) do |f| %>
+	<%= f.label :First_Name %>
+	<%= f.text_field :fname %> <br />
+	<%= f.label :Last_Name %>
+	<%= f.text_field :lname %> <br />
+	<%= f.label :Current_City %>
+	<%= f.text_field :city %><br />
+	<%= f.label :Start_Date%>
+	<%= f.date_field :departure %><br />
+	<%= f.label :End_Date%>
+	<%= f.date_field :arrival %><br />
+	<%= f.submit :update %>
+
+<% end %>

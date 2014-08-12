@@ -1,0 +1,5 @@
+<%= form_for [@city, @destination, @topic, @comment]  do |f| %>
+	<%= f.label :Body %><br />
+	<%= f.text_field :body %></br>
+	<%= f.submit :create %>
+<% end %></br>

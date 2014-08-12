@@ -1,0 +1,11 @@
+<h3 id="topicTitle"><%= "Weavel about the #{@dest.name}" %></br></h3>
+</br>
+<% @dest.topics.each do |topic| %>
+<p><%="Topic: #{topic.title} "%>|<%=" #{topic.user.fname} - Traveling: (#{topic.user.departure} - #{topic.user.arrival})"%></p>
+<%= link_to "Enter", city_destination_topic_path(@city, @dest, topic.id) %>
+</br>
+</br>
+<% end %>
+</br>
+
+<%= link_to "Add a New Topic", new_city_destination_topic_path %>

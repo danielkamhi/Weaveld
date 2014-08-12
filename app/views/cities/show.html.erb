@@ -1,0 +1,5 @@
+<ul>
+<% @city.destinations.each do |destination| %>
+	<li><%= link_to "#{destination.name}", city_destination_topics_path(@city, destination.id) %></li>
+<% end %>	
+</ul>

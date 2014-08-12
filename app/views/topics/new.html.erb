@@ -1,0 +1,8 @@
+<h1>New Topic</h1>
+<%= form_for [@city, @destination, @topic]  do |f| %>
+	<%= f.label :Title %><br />
+	<%= f.text_field :title %></br>
+	<%= f.submit :create %>
+<% end %></br>
+
+<%= link_to "Back to the #{@destination.name}", city_destination_topics_path(@city, @destination)%>
