@@ -1,5 +1,19 @@
+
+
+<h3>Best Destinations For You</h3>
 <ul>
-<% @city.destinations.each do |destination| %>
-	<li><%= link_to "#{destination.name}", city_destination_topics_path(@city, destination.id) %></li>
+<% @user.dest.each do |dest| %>
+	<% if dest.city_id == @city.id %>
+		<li><%= link_to "#{dest.name}", city_destination_topics_path(@city, dest.id) %></li>
+	<% end %>	
 <% end %>	
 </ul>
+
+<h3><%="All Destinations in #{@city.name}"%></h3>
+<ul>
+<% @city.destinations.each do |destination| %>
+	<li id="All"><%= link_to "#{destination.name}", city_destination_topics_path(@city, destination.id) %></li>
+<% end %>	
+</ul>
+
+<%= link_to "Back to Cities", cities_path %>

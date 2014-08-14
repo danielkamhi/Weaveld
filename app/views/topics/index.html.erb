@@ -1,11 +1,25 @@
 <h3 id="topicTitle"><%= "Weavel about the #{@dest.name}" %></br></h3>
 </br>
-<% @dest.topics.each do |topic| %>
-<p><%="Topic: #{topic.title} "%>|<%=" #{topic.user.fname} - Traveling: (#{topic.user.departure} - #{topic.user.arrival})"%></p>
-<%= link_to "Enter", city_destination_topic_path(@city, @dest, topic.id) %>
+<ul>
+<% current_user.travbuddy.each do |user|%>
+	<% user.topics.each do |topic| %>
+	<%if topic.destination_id == @dest.id %>
+	<p><%= topic.title %>| <%= " #{topic.user.fname} - Traveling: #{topic.user.departure.strftime(" %b. %d, %Y")} - #{topic.user.arrival.strftime("%b. %d, %Y")} " %></p>
+	<%= link_to "Enter", city_destination_topic_path(@city, @dest, topic.id) %>
+			<% end %>
+	    <% end %>
+	<% end %>
+</ul>
+
+
+
+
+
 </br>
-</br>
-<% end %>
 </br>
 
-<%= link_to "Add a New Topic", new_city_destination_topic_path %>
+</br>
+<%= link_to "Add a New Topic", new_city_destination_topic_path %></br>
+</br>
+<%= link_to "Back to #{@city.name}", city_path(@city)  %>
+

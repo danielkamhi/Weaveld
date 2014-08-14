@@ -4,6 +4,7 @@ class CitiesController < ApplicationController
   end
 
   def show
+  	@user = current_user
   	@city = City.find(params[:id])
   end
 
