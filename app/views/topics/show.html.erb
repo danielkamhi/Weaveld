@@ -1,13 +1,13 @@
 
 <div id="topicPhoto">
 	<div id="topicBody2">
+
+<h4 class id="commentPage"><%="Topic Started By: #{@topic.user.fname}"%></h4>
 <h4 class id="commentPage"><%="#{@topic.title}"%></h4>
-
-
 <ul>
 <%@topic.comments.each do |comment|%>
 
-	<p><%="- #{comment.body} "%>|<%=" #{comment.user.fname} - Traveling: #{comment.user.departure.strftime(" %b. %d, %Y")} - #{comment.user.arrival.strftime(" %b. %d, %Y")}"%><%= image_tag comment.user.avatar.url(:thumb) %></p>
+	<p><%="- #{comment.body} | Posted: #{comment.created_at.strftime('%a %b %d, %l:%M:%S')} "%>|<%=" #{comment.user.fname} - Traveling: #{comment.user.departure.strftime(" %b. %d, %Y")} - #{comment.user.arrival.strftime(" %b. %d, %Y")} | "%><%= image_tag comment.user.avatar.url(:thumb),  {:style=> 'border-radius:20px;'} %></p>
 	<%end%>
 </ul>
 <div id="backOne">

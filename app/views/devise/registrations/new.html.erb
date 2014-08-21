@@ -1,9 +1,41 @@
-<div id="SignBody">
-<h1 id="welcome">Welcome to Weaveld.</h1>
-<h2 id="signInTitle">Sign up</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-	<div class="signInForm">
-	    <div id="authform2" >
+    <title>Carousel Template for Bootstrap</title>
+
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+ 
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </head>
+
+
+    <div id="black">
+      <!--background image-->
+<% if current_user%>
+<div class="signInForm1">
+
+<h5><%="Welcome #{current_user.fname}"%></h5>
+</br>
+
+<div id="continueHome">
+  <%= link_to "Continue", cities_path %>
+ </div> 
+</div>
+
+
+<% else %>
+            <div class="signInForm1">
+                <div id="authform4" >
 			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 			  <%= devise_error_messages! %>
 				<div class="field">
@@ -17,17 +49,15 @@
 				<div class="field">
 			  <div><%= f.label :password_confirmation %><br />
 			    <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off" %></div>
-				</div>
-			  <div><%= f.submit "Sign up" %></div>
+				</br>
+			  <div><%= f.submit "Sign up", {:style=> 'color:black;'} %></div>
+		
+			</br>
 			<% end %>
-
-			
-		</div>
-	</div>
-</div>
-
-
-
+  			<p>Already a member? <%=link_to"Sign in", new_user_session_path%></p>
+  		</div>
+      </div>
+  <% end %>  
 
 
 

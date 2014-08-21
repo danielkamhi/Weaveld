@@ -11,7 +11,7 @@
 		<%if topic.destination.city_id == @city.id %>
 		<table class="table table-hover">
 
-		<th><li><div id="topicTitle"><%= topic.title %></div><div id="topicBody"> <%=topic.user.fname %> | <%="Arrival: #{topic.user.departure.strftime(" %b. %d, %Y")} - Departure: #{topic.user.arrival.strftime(" %b. %d, %Y")}" %> | <%="Talking about the #{topic.destination.name} "%>| <%= image_tag topic.user.avatar.url(:thumb) %> | <%= link_to "View Post", city_destination_topic_path(@city.id, topic.destination.id, topic.id) %></div></li></th>
+		<th><li><div id="topicTitle"><%=" #{topic.title} | Posted: #{topic.created_at.strftime('%a %b %d, %l:%M:%S')}" %></div><div id="topicBody"> <%=topic.user.fname %> | <%="Arrival: #{topic.user.departure.strftime(" %b. %d, %Y")} - Departure: #{topic.user.arrival.strftime(" %b. %d, %Y")}" %> | <%="Talking about the #{topic.destination.name} "%>| <%= image_tag topic.user.avatar.url(:thumb), {:style=> 'border-radius:20px;'}  %> | <%= link_to "View Post", city_destination_topic_path(@city.id, topic.destination.id, topic.id) %></div></li></th>
 
 		<% end %>
 	<% end %>

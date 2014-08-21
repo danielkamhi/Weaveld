@@ -11,47 +11,51 @@
 
 
 	<div class="travelto1">
-	<h3>Middle East & Asia</h3>
+	<h1>Middle East & Asia</h1>
 		
 		<% @city.each do |city| %>
 		<% if city.asia == true %>
-		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id) %></p><br/>
+		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id), {:style=> 'font-size:22px; color:black;'} %></p><br/>
 		<% end %>
 		<% end %>
 		
 	</div>
 
 	<div class="travelto2">
-	<h3>Australia</h3>
+	<h1>Australia</h1>
 		<ul>
 		<% @city.each do |city| %>
 		<% if city.australia == true %>
-		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id) %></p><br/>
+		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id), {:style=> 'font-size:22px; color:black;'} %></p><br/>
 		<% end %>
 		<% end %>
 		</ul>
 	</div>
 
 	<div class="travelto3">
-	<h3>Europe</h3>
+	<h1>Europe</h1>
 		<ul>
 		<% @city.each do |city| %>
 		<% if city.europe == true %>
-		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id) %></p><br/>
+		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id), {:style=> 'font-size:22px; color:black;'}%></p><br/>
 		<% end %>
 		<% end %>
 		</ul>
 	</div>
 
 	<div class="travelto4">
-	<h3>Americas</h3>
+	<h1>Americas</h1>
 		<ul>
 		<% @city.each do |city| %>
 		<% if city.america == true %>
-		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id) %></p><br/>
+		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id), {:style=> 'font-size:22px; color:black;'} %></p><br/>
 		<% end %>
 		<% end %>
 		</ul>
 	</div>
 	</div>
 </div>
+
+
+
+
