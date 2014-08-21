@@ -1,26 +1,65 @@
-<h3>Please tell us a little bit more about yourself</h3>
+<div class="formBack">
+		
+	<div class="authform">
+	<h5 id="more">Please tell us a little bit more about yourself:</h5>
+		
+	    <%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
+	     <div class="field1">
+	    <%= f.label :Add_A_Picture %>
+	    <%= f.file_field :avatar %></br>
+	    </div>
+	     <div class="field1">
+		<%= f.label :First_Name %>
+		<%= f.text_field :fname,  class: 'form-control'  %> <br />
+		</div>
+		 <div class="field1">
+		<%= f.label :Last_Name %>
+		<%= f.text_field :lname,  class: 'form-control' %> <br />
+		</div>
+		 <div class="field1">
+		<%= f.label :Current_City %>
+		<%= f.text_field :city,  class: 'form-control' %><br />
+		</div>
+		 <div class="field1">
+		<%= f.label :Arrival%>
+		<%= f.date_field :departure,  class: 'form-control' %><br />
+		</div>
+		 <div class="field1">
+		<%= f.label :Departure%>
+		<%= f.date_field :arrival,  class: 'form-control' %><br />
+		</div>
+		
+	
 
-<%= form_for(@user) do |f| %>
-	<%= f.label :First_Name %>
-	<%= f.text_field :fname %> <br />
-	<%= f.label :Last_Name %>
-	<%= f.text_field :lname %> <br />
-	<%= f.label :Current_City %>
-	<%= f.text_field :city %><br />
-	<%= f.label :Start_Date%>
-	<%= f.date_field :departure %><br />
-	<%= f.label :End_Date%>
-	<%= f.date_field :arrival %><br />
-	<%= f.label :Family_Trip %>
-	<%= f.check_box :family_trip %> <br />
-	<%= f.label :Adventure %>
-	<%= f.check_box :adventure %> <br />
-	<%= f.label :Performances %>
-	<%= f.check_box :performances %> <br />
-	<%= f.label :Foodie %>
-	<%= f.check_box :foodie %> <br />
-	<%= f.label :Culture %>
-	<%= f.check_box :culture %> <br />
-	<%= f.submit :update %>
-`
+			<h4>What type of trip are you looking for?</h4>
+	
+
+	<div class="box">
+		<%= f.label :Family_Trip %>
+		<%= f.check_box :family_trip %> <br />
+	</div>	
+	<div class="box">	 
+		<%= f.label :Adventure %>
+		<%= f.check_box :adventure %> <br />
+	</div>
+	<div class="box">	
+		<%= f.label :Performances %>
+		<%= f.check_box :performances %> <br />
+	</div>
+	<div class="box">	
+		<%= f.label :Foodie %>
+		<%= f.check_box :foodie %> <br />
+	</div>	
+	<div class="box">
+		<%= f.label :Culture %>
+		<%= f.check_box :culture %> <br />
+	</div>	
+			</br>
+
+		<div class="continue"> <%= f.submit :Continue %></div>
+	
+</br>
+
 <% end %>
+	</div>
+</div>

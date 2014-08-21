@@ -1,0 +1,27 @@
+<div id="SignBody">
+
+<h1 id="welcome">Welcome back to Weaveld.</h1>
+<h2 id="signInTitle">Sign in</h2>
+<div class="signInForm">
+	<div id="authform2" >
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	   <div class="field">
+	  <div><%= f.label :email %><br />
+	  <%= f.email_field :email, class: 'form-control', autofocus: true %></div>
+		</div>
+		<div class="field">
+	  <div><%= f.label :password %><br />
+	    <%= f.password_field :password,class: 'form-control',  autocomplete: "off" %></div>
+		</div>
+
+	  <% if devise_mapping.rememberable? -%>
+	    <div><%= f.check_box :remember_me%> 
+	    <%= f.label :remember_me  %></div>
+
+	  <% end -%>
+
+	  <div><%= f.submit "Sign in" %></div>
+	<% end %>
+	</div>
+</div>
+</div>

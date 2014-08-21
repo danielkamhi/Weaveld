@@ -1,12 +1,19 @@
+
+<div id="topicPhoto">
+	<div id="topicBody2">
 <h4 class id="commentPage"><%="#{@topic.title}"%></h4>
 
 
 <ul>
 <%@topic.comments.each do |comment|%>
-<p><%="- #{comment.body} "%>|<%=" #{comment.user.fname} - Traveling: #{comment.user.departure.strftime(" %b. %d, %Y")} - #{comment.user.arrival.strftime(" %b. %d, %Y")}"%><p>
-<%end%>
-</ul>
 
+	<p><%="- #{comment.body} "%>|<%=" #{comment.user.fname} - Traveling: #{comment.user.departure.strftime(" %b. %d, %Y")} - #{comment.user.arrival.strftime(" %b. %d, %Y")}"%><%= image_tag comment.user.avatar.url(:thumb) %></p>
+	<%end%>
+</ul>
+<div id="backOne">
 <%= link_to "Respond to Post", new_city_destination_topic_comment_path(@city, @dest, @topic) %></br>
 </br>
 <%= link_to "Back to #{@dest.name}", city_destination_topics_path(@city, @dest) %>
+</div>
+</div>
+</div>

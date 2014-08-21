@@ -1,9 +1,83 @@
-<h3>Welcome to Weaveld</h3>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-<p>Select your dates and tell us where you're going!</p>
+    <title>Carousel Template for Bootstrap</title>
 
-<% if current_user %>
-<%= link_to "Get started", user_path(current_user.id) %>
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+ 
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </head>
+
+
+    <div id="black">
+      <!--background image-->
+<% if current_user%>
+<div class="signInForm1">
+
+<h5><%="Welcome #{current_user.fname}"%></h5>
+</br>
+
+<div id="continueHome">
+  <%= link_to "Continue", cities_path %>
+ </div> 
+</div>
+
+
 <% else %>
- Not a member? <%=link_to "Sign Up", new_user_registration_path %>
-<% end %>
+            <div class="signInForm1">
+                <div id="authform4" >
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= devise_error_messages! %>
+                  <div class="field">
+                  <div><%= f.label :email %><br />
+                  <%= f.email_field :email, class: 'form-control', autofocus: true %></div>
+                  </div>
+                  </br>
+                  <div class="field">
+                  <div><%= f.label :password %><br />
+                    <%= f.password_field :password, class: 'form-control', autocomplete: "off" %></div>
+                  </div>
+                  </br>
+                  <div class="field">
+                  <div><%= f.label :password_confirmation %><br />
+                    <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off" %></div>
+                  </div>
+                   </br>
+                  <div><%= f.submit "Sign up" %></div>
+                <% end %>
+                </br>
+            
+                
+                <p> Already a member? <%=link_to"Sign in", new_user_session_path%></p>
+           </div>
+  
+      </div>
+  <% end %>  
+    <!--BELOW PHOTO__________________________________________________________-->
+	 <div id="connecting">
+   <p> Connecting travelers around the world. In the same city. </p>
+   </div>
+
+  <div id="explain2">
+    <P>Tell us where you plan to travel.</P>
+    <p >Select your dates.</P>
+    <P id="right">Choose what you want to do when you're there.</P>
+    <P id="right2">Talk with other travelers that will be there with you.</P>
+    <p id="right3">Sign Up</p>
+    </div> 
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+  </body>
+</html>

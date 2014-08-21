@@ -1,19 +1,53 @@
+<div class="cityBackground">
+<div class="headBackground">
+<h4 class="cityName"><%="#{@city.name}"%></h4>
+</div>
+<p id="connectP"><%="Connect with other travelers going to #{@city.name} when you're going."%></p>
+<div id="board">
+<p id="discussion">What people are saying...</p>
 
+<% current_user.travbuddy.each do |user|%>
+	<% user.topics.each do |topic| %>
+		<%if topic.destination.city_id == @city.id %>
+		<table class="table table-hover">
 
-<h3>Best Destinations For You</h3>
-<ul>
-<% @user.dest.each do |dest| %>
-	<% if dest.city_id == @city.id %>
-		<li><%= link_to "#{dest.name}", city_destination_topics_path(@city, dest.id) %></li>
+		<th><li><div id="topicTitle"><%= topic.title %></div><div id="topicBody"> <%=topic.user.fname %> | <%="Arrival: #{topic.user.departure.strftime(" %b. %d, %Y")} - Departure: #{topic.user.arrival.strftime(" %b. %d, %Y")}" %> | <%="Talking about the #{topic.destination.name} "%>| <%= image_tag topic.user.avatar.url(:thumb) %> | <%= link_to "View Post", city_destination_topic_path(@city.id, topic.destination.id, topic.id) %></div></li></th>
+
+		<% end %>
+	<% end %>
+<% end %>
+    <th colspan="3"></th>
+    </tr>
+  </thead>
+</table>
+
+</div>
+<p id="comment">Have your own question or comment? Just pick a destination below that you want to visit and post.</p>
+
+<div id="bestDestinations">
+<h3>Top Picks For You</h3>
+	<div id="picks">
+	<ul>
+	<% @user.dest.each do |dest| %>
+		<% if dest.city_id == @city.id %>
+			<p id="destName"><%= link_to "#{dest.name}", city_destination_topics_path(@city, dest.id) %></p>
+		<% end %>	
 	<% end %>	
-<% end %>	
-</ul>
+	</ul>
+	</div>
 
-<h3><%="All Destinations in #{@city.name}"%></h3>
+</div>
+<div id="dash"></div>
+<div id="allDestinations">
+<h3 id="allTitle"><%="All Destinations in #{@city.name}"%></h3>
 <ul>
 <% @city.destinations.each do |destination| %>
-	<li id="All"><%= link_to "#{destination.name}", city_destination_topics_path(@city, destination.id) %></li>
+	<p id="All"><%= link_to "#{destination.name}", city_destination_topics_path(@city, destination.id) %></p>
 <% end %>	
 </ul>
-
+</div>
+<!-- <div id="back">
 <%= link_to "Back to Cities", cities_path %>
+</div> -->
+</div>
+

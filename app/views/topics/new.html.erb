@@ -1,8 +1,23 @@
-<h1>New Topic</h1>
+
+<div id="topicPhoto">
+	<div id="topicBody2">
+<h1 id="newTopic">New Topic</h1>
+<div id="authform2" >
+
 <%= form_for [@city, @destination, @topic]  do |f| %>
-	<%= f.label :Title %><br />
-	<%= f.text_field :title %></br>
+<div id="titleForm">
+	<%= f.label :Title %><br />	
+	<%= f.text_field :title, class: 'form-control' %></br>
+</div>
+<div id="submit">
 	<%= f.submit :create %>
+</div>
 <% end %></br>
 
+</div>
+<div id="backOne">
 <%= link_to "Back to the #{@destination.name}", city_destination_topics_path(@city, @destination)%>
+</div>
+	</div>
+
+</div>

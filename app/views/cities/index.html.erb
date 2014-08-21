@@ -1,8 +1,57 @@
-<h3> Where are you traveling to?</h3>
-<ul>
-<% @city.each do |city| %>
 
-<li><%= link_to "#{city.name}", city_path(city.id) %></li><br/>
 
-<% end %>
-</ul>
+<div class="travelImage">
+<div class="white">
+<h2  id="where"> Where are you traveling to?</h2>
+<button id="asia" type="button">Middle East & Asia</button>
+<button id="australia" type="button">Australia</button>
+<button id="europe" type="button">Europe</button>
+<button id="americas" type="button">Americas</button>
+
+
+
+	<div class="travelto1">
+	<h3>Middle East & Asia</h3>
+		
+		<% @city.each do |city| %>
+		<% if city.asia == true %>
+		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id) %></p><br/>
+		<% end %>
+		<% end %>
+		
+	</div>
+
+	<div class="travelto2">
+	<h3>Australia</h3>
+		<ul>
+		<% @city.each do |city| %>
+		<% if city.australia == true %>
+		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id) %></p><br/>
+		<% end %>
+		<% end %>
+		</ul>
+	</div>
+
+	<div class="travelto3">
+	<h3>Europe</h3>
+		<ul>
+		<% @city.each do |city| %>
+		<% if city.europe == true %>
+		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id) %></p><br/>
+		<% end %>
+		<% end %>
+		</ul>
+	</div>
+
+	<div class="travelto4">
+	<h3>Americas</h3>
+		<ul>
+		<% @city.each do |city| %>
+		<% if city.america == true %>
+		<p id="cityName"><%= link_to "#{city.name}", city_path(city.id) %></p><br/>
+		<% end %>
+		<% end %>
+		</ul>
+	</div>
+	</div>
+</div>
