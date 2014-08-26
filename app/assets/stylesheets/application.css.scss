@@ -126,7 +126,7 @@ text-align: center;
 }
 
 #black{
-	background: url("Venice 333.jpg") no-repeat center fixed;
+	background: url("../images/Venice 333.jpg") no-repeat center fixed;
 	height: 500px;
 	opacity: .9;
 	
@@ -148,12 +148,12 @@ margin-bottom: 129px;
 
 .travelImage{
 	text-align: center;
-	padding-top: 0px;
+	padding-top: 310px;
 	width: 100%;
 	height: 100%;
 	 background: navy;
 	// opacity: .7;
-	  background: url("beach1.jpg") no-repeat center fixed;
+	  background: url("../images/beach1.jpg") no-repeat center fixed;
 	  background-size: cover;
 	  color: black;
 	 // position: absolute;
@@ -189,10 +189,11 @@ margin-bottom: 129px;
 .white{
 	
 	background-color: white;
-	opacity: .8;
+	opacity: .96;
 	padding-top: 19px;
 	height: 100%;
-	//color: white;
+	color:  rgb(82, 148, 231);
+
 }
 
 #cityName{
@@ -209,7 +210,7 @@ margin-bottom: 129px;
 	height: 175px;
 	 background-color: black;
 	opacity: .7;
-	  background: url("beach1.jpg") no-repeat center fixed;
+	  background: url("../images/beach1.jpg") no-repeat center fixed;
 	  background-size: cover;
 	  color: black;   
 }
@@ -228,7 +229,7 @@ margin-bottom: 129px;
 
 	//background: #E2E2E2 no-repeat center fixed;
 	background-size: cover;
-	background: url("prague7.jpg") no-repeat center fixed;
+	background: url("../images/prague7.jpg") no-repeat center fixed;
 	/* box-shadow: 5px 5px 2.5px #888888; */
 	position: absolute;
 	top: 72px;
@@ -255,21 +256,21 @@ margin-bottom: 129px;
 }
 
 #bestDestinations{
-	width: 100%;
+	width: 30%;
 	height: 282px;
-	margin-top: -10px;
+	margin-top: -472px;
 	text-align: center;
-	//background: url("gray.jpg") no-repeat center fixed;
-	background-color:white;
+	background-color: white;
 	float: left;
 	clear: both;
 	font-family: Century Gothic;
 	padding-top: 12px;
+	margin-left: 73px;
 
 }
 
 #picks{
-	padding-left: 9px;
+	
 	width: 60%;
 	margin-left:20%;
 	overflow:scroll;
@@ -297,7 +298,7 @@ margin-bottom: 129px;
 	float: left;
 	clear: both;
 	//margin-left: 78px;
-	margin-top: -2px;
+	margin-top: -288px;
 	background-color:white;
 
 }
@@ -324,6 +325,9 @@ margin-bottom: 129px;
 
 	
 }
+#namepost{
+	color: red;
+}
 
 #board p{
 	
@@ -331,18 +335,23 @@ margin-bottom: 129px;
 	font-size: 17.5px;
 	text-align: center;
 
+	
+
 }
+
+
+
 #board{
 	
 	font-family: Century Gothic;
-	border: 4px solid rgb(82, 148, 231);
+	border: 3px solid #5294e7;
 	border-radius: 5px;
-	width: 50%;
-	height: 350px;
-	margin-left: 25%;
-	margin-top: 26px;
+	width: 41%;
+	height: 435px;
+	margin-left: 46%;
+	margin-top: 37px;
 	overflow: scroll;
-	
+	font-weight: none;
 }
 #topicTitle{
 	font-weight: bold;
@@ -351,15 +360,48 @@ margin-bottom: 129px;
 #topicBody{
 	margin-left: 14px;
 }
-#comment{
-text-align: center;
-width: 100%;
-font-family: Century Gothic;
-margin-top: 25px;
-margin-bottom: 4px;
-font-size: 14px;
-padding-bottom: 26px;
+#comment1{
+	float: right;
+	padding-bottom: 17px;
+	width: 100%;
+	padding-left: 567px;
+	font-family: century gothic;
+	padding-top: 14px;
+}
 
+#comment2{
+color: #dd3232;
+float: left;
+margin-left: 68px;
+margin-top: -12px;
+font-size: 16px;
+margin-right: 54px;
+margin-bottom: 13px;
+
+}
+#posted{
+	float: left;
+margin-left: 68px;
+margin-top: -13px;
+}
+#arrival{
+	float: left;
+margin-left: 53px;
+}
+#view{
+	float: left;
+	margin-left: 52px;
+	width: 76%;
+	border-bottom: 1px solid black;
+	padding-bottom: 9px;
+}
+#comm{
+		float: left;
+	margin-left: 52px;	
+}
+#indPhoto{
+	margin-top: 60px;
+	margin-left: 13px;
 }
 
 #board li{
@@ -389,7 +431,7 @@ padding-top: 10px;
 }
 
 #SignBody{
-	background: url("travel3.jpg") no-repeat center fixed;
+	background: url("../images/travel3.jpg") no-repeat center fixed;
 	//background-color: rgb(208, 208, 253);
 	height: 900px;
 	//position: absolute;
@@ -416,7 +458,7 @@ margin-left: 51px;
 
 //___________________________________USERS SHOW_______________________________________________
 .formBack{
-	background: url("travel2.jpg") no-repeat center fixed;
+	background: url("../images/travel2.jpg") no-repeat center fixed;
 	margin-top: -6px
 }
 .authform{
@@ -458,7 +500,7 @@ margin-left: 51px;
 	margin-top: -15px;
 	height: 800px;
 	width: 100%;
-	background: url("travel4.jpg") no-repeat  center fixed;
+	background: url("../images/travel4.jpg") no-repeat  center fixed;
 	background-size: cover;
 }
 #topicBody2{
@@ -468,7 +510,7 @@ margin-left: 51px;
 	margin-left: 20%;
 	background-color: rgb(231, 241, 255);
 	//opacity: .9;
-	
+	overflow: scroll;
 	font-family: Century Gothic;
 }
 #topicTitle{

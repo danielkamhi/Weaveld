@@ -19,17 +19,17 @@ $(document).ready(function(){
 
         $('#asia').click(function () {
           $('html,body').animate({
-              scrollTop: $(document).height()/3.7,
+              scrollTop: $(document).height()/3.0,
           }, 1500);
         });
         $('#australia').click(function () {
           $('html,body').animate({
-              scrollTop: $(document).height()/2.4,
+              scrollTop: $(document).height()/2.1,
           }, 1000);
         });
         $('#europe').click(function () {
           $('html,body').animate({
-              scrollTop: $(document).height()/1.1,
+              scrollTop: $(document).height()/1.8,
           }, 1000);
         });
         $('#americas').click(function () {

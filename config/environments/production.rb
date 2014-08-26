@@ -31,6 +31,9 @@ config.action_mailer.default_url_options = { :host => 'example.com' }
 
   # Generate digests for assets URLs.
   config.assets.digest = true
+  config.serve_static_assets = true
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+  config.assets.compile = true
 
   # `config.assets.precompile` has moved to config/initializers/assets.rb
 
