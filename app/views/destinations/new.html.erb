@@ -1,2 +1,35 @@
 <h1>Destinations#new</h1>
 <p>Find me in app/views/destinations/new.html.erb</p>
+
+  <%= form_for @destination, :url => destinations_path, :html => { :multipart => true } do |f| %>
+	  
+	     <div class="field1">
+		<%= f.label :name %>
+		<%= f.text_field :name,  class: 'form-control'  %> <br />
+		</div>
+		 <div class="field1">
+		<%= f.label :CityID %>
+		<%= f.number_field :city_id,  class: 'form-control'  %> <br />
+		</div>
+		<div class="box">
+		<%= f.label :Family_Trip %>
+		<%= f.check_box :family_trip %> <br />
+	</div>	
+	<div class="box">	 
+		<%= f.label :Adventure %>
+		<%= f.check_box :adventure %> <br />
+	</div>
+	<div class="box">	
+		<%= f.label :Performances %>
+		<%= f.check_box :performances %> <br />
+	</div>
+	<div class="box">	
+		<%= f.label :Foodie %>
+		<%= f.check_box :foodie %> <br />
+	</div>	
+	<div class="box">
+		<%= f.label :Culture %>
+		<%= f.check_box :culture %> <br />
+	</div>	
+		<div class="continue"> <%= f.submit :Continue %></div>
+		<% end %>
