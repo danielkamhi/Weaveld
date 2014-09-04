@@ -11,16 +11,23 @@ class CitiesController < ApplicationController
 
   def new
     @city = City.new
-    if @city.update(city_params)
-      @city.save
-      redirect_to user_path
-    end  
-  end
+  end  
 
+    def create
+    @city = City.new(city_params)
+    if @city.save
+      redirect_to users_path
+    else
+      flash[:alert] = "There was a problem. Please try again."
+      render :new
+    end   
+  end 
+ 
+private
 
-  private
+    def city_params
+      params.require(:city).permit(:name, :europe)
+    end 
 
-     def city_params
-      params.require(:city).permit(:name)
-    end
+  
 end
