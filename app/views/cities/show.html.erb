@@ -5,7 +5,7 @@
 <p id="connectP"><%="Choose a destination to connect with other travelers."%></p>
 <p id="comment1"><%="Check to see what people are talking about when you're there."%> </br> <%="Have you're own question or comment? Pick a destination and post."%>
 <div id="board">
-<p id="discussion"><%="Travelers that will be in #{@city.name}"%></p>
+<p id="discussion"><%="Travelers that will be in #{@city.name} after    #{Time.at(current_user.departure - 3.weeks).strftime(" %b. %d, %Y")}"%></p>
 
 <% current_user.travbuddy.each do |user|%>
 	<% user.topics.each do |topic| %>

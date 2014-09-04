@@ -10,5 +10,17 @@ class CitiesController < ApplicationController
   end
 
   def new
+    @city = City.new
+    if @city.update(city_params)
+      @city.save
+      redirect_to user_path
+    end  
   end
+
+
+  private
+
+     def city_params
+      params.require(:city).permit(:name)
+    end
 end

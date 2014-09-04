@@ -16,6 +16,8 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
+  $(window).load( function() {
+    
 
         $('#asia').click(function () {
           $('html,body').animate({
@@ -102,5 +104,5 @@ $(document).ready(function(){
             scrollTop: $(document).height()/1000,
          }, 1000);
          });
-
+});
 });

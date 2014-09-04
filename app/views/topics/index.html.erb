@@ -6,11 +6,12 @@
 		<% current_user.travbuddy.each do |user|%>
 			<% user.topics.each do |topic| %>
 			<%if topic.destination_id == @dest.id %>
-			<p><%= "#{topic.title} | Posted: #{topic.created_at.strftime('%a %b %d, %l:%M:%S')} "  %></br> <%= " #{topic.user.fname} - Traveling: #{topic.user.departure.strftime(" %b. %d, %Y")} - #{topic.user.arrival.strftime("%b. %d, %Y")} " %><div id="image"><%= image_tag topic.user.avatar.url(:thumb),{:style=> 'border-radius:20px;'}  %></div>
+			<p><div id="image"><%= image_tag topic.user.avatar.url(:thumb),{:style=> 'border-radius:20px;'}  %></div><div id="topictitle1"><%= "#{topic.title} "%></div><div id="topicBody11"><%= "Posted: #{topic.created_at.strftime('%a %b %d, %l:%M:%S')} "  %></br> <%= " #{topic.user.fname} - Traveling: #{topic.user.departure.strftime(" %b. %d, %Y")} - #{topic.user.arrival.strftime("%b. %d, %Y")} " %></div>
 			<%= link_to "Respond to #{topic.user.fname}", new_city_destination_topic_comment_path(@city, @dest, topic) %> | <%= link_to "#{topic.comments.count} Comments", city_destination_topic_path(@city, @dest, topic.id)%></p>
 					<% end %>
 			    <% end %>
-			<% end %>
+			       <% end %>
+			
 		</ul>
 
 
