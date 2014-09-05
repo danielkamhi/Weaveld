@@ -12,7 +12,7 @@
 		<%if topic.destination.city_id == @city.id %>
 		
 
-		<th><p><div id="indPhoto"><%= image_tag topic.user.avatar.url(:thumb), {:style=> 'border-radius:20px;'} %> | <%="#{topic.user.fname}: Talking about the #{topic.destination.name} "%></div><div id="topicTitle"><h5 id="comment2"><%="  #{topic.title}"%></h5></br><div id="posted"> <%="Posted: #{topic.created_at.strftime('%a %b %d, %l:%M:%S')}" %></div></div><div id="topicBody"><div id="arrival"> <%="Arrival: #{topic.user.departure.strftime(" %b. %d, %Y")} - Departure: #{topic.user.arrival.strftime(" %b. %d, %Y")}" %></div></br><div id="comm"><%="#{topic.comments.count} comments"%></div></br><div id="view"> <%= link_to "View Full Post & Comment", city_destination_topic_path(@city.id, topic.destination.id, topic.id) %></div></br></div></p></th>
+		<th><p><div id="indPhoto"><%= image_tag topic.user.avatar.url(:thumb), {:style=> 'border-radius:20px;'} %> | <%="#{topic.user.fname}: Talking about the #{topic.destination.name} "%></div></br></br><div id="topicTitle"><h5 id="comment2"><%="  #{topic.title}"%></h5></br><div id="posted"> <%="Posted: #{topic.created_at.strftime('%a %b %d, %l:%M:%S')}" %></div></div><div id="topicBody"><div id="arrival"> <%="Arrival: #{topic.user.departure.strftime(" %b. %d, %Y")} - Departure: #{topic.user.arrival.strftime(" %b. %d, %Y")}" %></div></br><div id="comm"><%="#{topic.comments.count} comments"%></div></br><div id="view"> <%= link_to "View Full Post & Comment", city_destination_topic_path(@city.id, topic.destination.id, topic.id) %></div></br></div></p></th>
 
 		<% end %>
 	<% end %>
