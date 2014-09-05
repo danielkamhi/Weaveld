@@ -7,7 +7,7 @@
 <ul>
 <%@topic.comments.each do |comment|%>
 
-	<p><div id="comment3"><%= image_tag comment.user.avatar.url(:thumb),  {:style=> 'border-radius:20px;'} %><%=" - #{comment.body}"%></div><div id="commentBody"><%=" Posted: #{comment.created_at.strftime('%a %b %d, %l:%M:%S')} "%>|<%=" #{comment.user.fname} - Traveling: #{comment.user.departure.strftime(" %b. %d, %Y")} - #{comment.user.arrival.strftime(" %b. %d, %Y")}"%></div></p>
+	<p><div id="comment3"><%= image_tag comment.user.avatar.url(:thumb),  {:style=> 'border-radius:20px;'} %><%=" - #{comment.body}"%></br></br></div><div id="commentBody"><%=" Posted: #{comment.created_at.strftime('%a %b %d, %l:%M:%S')} "%>|<%=" #{comment.user.fname} - Traveling: #{comment.user.departure.strftime(" %b. %d, %Y")} - #{comment.user.arrival.strftime(" %b. %d, %Y")}"%></div></p>
 	<%end%>
 </ul>
 <div id="backOne">
