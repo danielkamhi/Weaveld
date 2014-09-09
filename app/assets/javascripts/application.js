@@ -12,11 +12,13 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
+
 //= require_tree .
 $(document).ready(function(){
-  $(window).load( function() {
+
     
 
         $('#asia').click(function () {
@@ -104,5 +106,5 @@ $(document).ready(function(){
             scrollTop: $(document).height()/1000,
          }, 1000);
          });
-});
+
 });
